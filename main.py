@@ -278,3 +278,13 @@ def transform_list(nums):
                 result.append(x)
     return result
 print(transform_list([-12, 3, 8, 79, -5]))
+
+#17
+a= lambda nums: list(
+    map(lambda x: x*x,
+        filter(lambda x: ((x%3 ==0) or (x % 5 == 0))
+              and (x % 15 != 0)
+               and len(str(abs(x)))%2 == 1),
+        nums))
+a=[12,4,5,6,9,30]
+print(a)
