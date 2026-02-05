@@ -87,7 +87,6 @@ def top_k_words(text, k):
                 break
         if not found:
             freq.append([w, 1])
-
     n = len(freq)
     for i in range(n):
         for j in range(0, n - i - 1):
@@ -103,3 +102,14 @@ def top_k_words(text, k):
 
 
 print(top_k_words(" hello apple hello1 banana apple hello", 2))
+
+#4
+x=lambda s: " ".join(
+    word.lower()
+    for word in s.split()
+    if sum(c.isupper() for c in word) == 1
+    and not word[0].isupper()
+    and not word[-1].isupper()
+)
+text=" word wOrd run hello file"
+print(x(text))
