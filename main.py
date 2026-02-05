@@ -288,3 +288,23 @@ a= lambda nums: list(
         nums))
 a=[12,4,5,6,9,30]
 print(a)
+
+#18
+def flatten_and_filter(lst):
+    nums = []
+    stack = [lst]
+    while stack:
+        current = stack.pop()
+        if isinstance(current, list):
+            for item in current:
+                stack.append(item)
+        else:
+            if isinstance(current, int):
+                nums.append(current)
+    result = []
+    for x in nums:
+        if x > 0 and x%4 != 0 and abs(x) >= 10:
+            result.append(x)
+    result.sort()
+    return result
+print(flatten_and_filter([1, [12, -5, [33, 8, [16, 25]]],9, [10]]))
