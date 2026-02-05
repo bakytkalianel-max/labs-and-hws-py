@@ -136,4 +136,14 @@ def compress_text(text):
         result += text[-1]
     return result
 
+#6
+x= lambda s: [
+    d for d in s.split()
+    if len(d) >= 4
+    and not any(ch.isdigit() for ch in d)
+    and len(set(d.lower())) == len(d)
+]
+a= " abcde anel hello world"
+print(x(a))
+
 print(compress_text("aaBBcDDD"))
