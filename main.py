@@ -307,4 +307,5 @@ def flatten_and_filter(lst):
             result.append(x)
     result.sort()
     return result
-print(flatten_and_filter([1, [12, -5, [33, 8, [16, 25]]],9, [10]]))
+print(flatten_and_filter([1, [12, -5, [33, 8, [16, 25]]],9, s[10]]))
+
