@@ -240,3 +240,20 @@ a= lambda s: ",".join(
 )
 text=("anely lamlda retyhd sxdw")
 print(a(text))
+
+#15
+vowels = set("aeiouAEIOUаеиоуыэюяёАЕИОУЫЭЮЯЁ")
+def word_pattern_sort(text):
+    words = text.split()
+    def vowels_count(x):
+        return sum(1for ch in x if ch in vowels)
+    groups = {}
+    for x in words:
+        groups.setdefault(len(x),[]).append(x)
+    result = []
+    for length in sorted(groups):
+        group = groups[length]
+        group_sorted = sorted(group, key=lambda x:(-vowels_count(x), x.lower()))
+        result.extend(group_sorted)
+    return result
+print(word_pattern_sort("mama papa window fly"))
