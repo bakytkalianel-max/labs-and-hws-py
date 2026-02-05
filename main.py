@@ -204,7 +204,7 @@ print(words1(a))
 def replace_every_nth(text, n, char):
     if n <= 0:
         return text
-    soans = []
+    spans = []
     i=0
     while i <len(text):
         if text[i] != " ":
@@ -225,6 +225,18 @@ def replace_every_nth(text, n, char):
         pos = idx +1
         if pos % n == 0:
             if ch != " " and not ch.isdigit() and idx not in short_idx:
-                chars[idx] = chars
+                chars[idx] = char
     return "".join(chars)
 print(replace_every_nth("Hello world Help",2," "))
+
+#14
+vowels = set("aeiouAEIOUаеиоуыэюяёАЕИОУЫЭЮЯЁ")
+a= lambda s: ",".join(
+    x for x in s.split()
+    if len(set(x.lower())) > 3
+    and (lambda vw: len(vw) == len(set(vw)))(
+        [c.lower() for c in x if c in vowels]
+    )
+)
+text=("anely lamlda retyhd sxdw")
+print(a(text))
