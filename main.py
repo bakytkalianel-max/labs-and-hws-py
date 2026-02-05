@@ -312,3 +312,28 @@ print(flatten_and_filter([1, [12, -5, [33, 8, [16, 25]]],9, [10]]))
 #19
 text= lambda a,b:[x for x, y in zip(a,b) if x == y and x % 2 == 0]
 print(text([2,3,4,5,6],[2,5,4,8,9]))
+
+#20
+def max_subarray_sum(nums, k):
+    if k <= 0 or k > len(nums):
+        return None
+
+    best = None
+
+    for i in range(0, len(nums) - k + 1):
+        window = nums[i:i + k]
+
+        ok = True
+        s = 0
+        for x in window:
+            if x <= 0:
+                ok = False
+                break
+            s += x
+
+        if ok:
+            if best is None or s > best:
+                best = s
+
+    return best
+print(max_subarray_sum([1,2,3,4,5],3))
