@@ -145,5 +145,21 @@ x= lambda s: [
 ]
 a= " abcde anel hello world"
 print(x(a))
-
 print(compress_text("aaBBcDDD"))
+
+#7
+def palindrome_words(text):
+    cleaned=""
+    for ch in text:
+        if ch.isalpha() or ch == " ":
+            cleaned += ch
+    words = cleaned.lower().split()
+    palindromes=[]
+    for x in words:
+        if len(x) > 3 and x == x[::-1] and x not in palindromes:
+            palindromes.append(x)
+    palindromes.sort()
+    palindromes.sort(key = len,reverse=True)
+
+    return palindromes
+print(palindrome_words(" level hello text edit abba"))
