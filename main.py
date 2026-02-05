@@ -21,3 +21,35 @@ def common_unique_chars(s1,s2):
             result += ch
     return result
 print(common_unique_chars("hello worl5s", "abs c1a5d"))
+
+
+# 1
+def analyze_text(text):
+    vowels = "аеиоуыэюяaeiouy"
+    uniq_vowels = []
+    words = []
+    word = ""
+
+    for x in text.lower():
+        if x.isalpha():
+            word += x
+        else:
+            if word != "":
+                for c in word:
+                    if c in vowels and c not in uniq_vowels:
+                        uniq_vowels.append(c)
+                if len(word) >= 5 and word[0] == word[-1] and word not in words:
+                    words.append(word)
+            word = ""
+    if word != "":
+        for c in word:
+            if c in vowels and c not in uniq_vowels:
+                uniq_vowels.append(c)
+        if len(word) >= 5 and word[0] == word[-1] and word not in words:
+            words.append(word)
+
+    return (len(uniq_vowels), " ".join(words))
+
+
+text = input("Введите текст:")
+print(analyze_text(text))
