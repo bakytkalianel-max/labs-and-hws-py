@@ -163,3 +163,13 @@ def palindrome_words(text):
 
     return palindromes
 print(palindrome_words(" level hello text edit abba"))
+
+#8
+x= lambda s: " ".join(
+    f if any(ch.isdigit() for ch in f)
+    else "VOWEL" if f[0].lower() in "aeiou"
+    else "CONSONANT"
+    for f in s.split()
+)
+a=" anel text leve1 sp1it "
+print(x(a))
