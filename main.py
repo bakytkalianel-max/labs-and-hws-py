@@ -199,3 +199,32 @@ words1 = lambda s: [
 ]
 a="anea level aba adfah sahfs"
 print(words1(a))
+
+#13
+def replace_every_nth(text, n, char):
+    if n <= 0:
+        return text
+    soans = []
+    i=0
+    while i <len(text):
+        if text[i] != " ":
+            start = i
+            while i < len(text) and text[i] != " ":
+                i += 1
+            end = i
+            spans.append((start,end))
+        else:
+            i += 1
+    short_idx = set()
+    for start,end in spans:
+        if end - start <3:
+            for k in range(start,end):
+                short_idx.add(k)
+    chars= list(text)
+    for idx, ch in enumerate(chars):
+        pos = idx +1
+        if pos % n == 0:
+            if ch != " " and not ch.isdigit() and idx not in short_idx:
+                chars[idx] = chars
+    return "".join(chars)
+print(replace_every_nth("Hello world Help",2," "))
