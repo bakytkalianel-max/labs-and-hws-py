@@ -307,5 +307,8 @@ def flatten_and_filter(lst):
             result.append(x)
     result.sort()
     return result
-print(flatten_and_filter([1, [12, -5, [33, 8, [16, 25]]],9, s[10]]))
+print(flatten_and_filter([1, [12, -5, [33, 8, [16, 25]]],9, [10]]))
 
+#19
+text= lambda a,b:[x for x, y in zip(a,b) if x == y and x % 2 == 0]
+print(text([2,3,4,5,6],[2,5,4,8,9]))
