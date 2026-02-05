@@ -173,3 +173,19 @@ x= lambda s: " ".join(
 )
 a=" anel text leve1 sp1it "
 print(x(a))
+
+#9
+def alternate_case_blocks(text, n):
+    result = ""
+    a=0
+    for i in range(0, len(text), n):
+        block=text[i:i+n]
+
+        if a % 2 ==0:
+            result += block.upper()
+        else:
+            result += block.lower()
+
+        a += 1
+    return result.replace(" ","")
+print(alternate_case_blocks("Hello world Help",2))
