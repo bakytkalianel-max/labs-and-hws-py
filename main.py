@@ -189,3 +189,13 @@ def alternate_case_blocks(text, n):
         a += 1
     return result.replace(" ","")
 print(alternate_case_blocks("Hello world Help",2))
+
+#12
+words1 = lambda s: [
+    x for x in s.split()
+    if len(x) >3
+       and x[0].lower() == x[-1].lower()
+       and x.lower() != x.lower()[::-1]
+]
+a="anea level aba adfah sahfs"
+print(words1(a))
