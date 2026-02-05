@@ -65,3 +65,41 @@ process = lambda s: " ".join(
     )
 )
 print(process("hello anel sa33 level even"))
+
+
+# 3
+def top_k_words(text, k):
+    text = text.lower()
+
+    cleaned = ""
+    for x in text:
+        if x.isalpha() or x == " ":
+            cleaned += x
+    words = cleaned.split()
+
+    freq = []
+    for w in words:
+        found = False
+        for item in freq:
+            if item[0] == w:
+                item[1] += 1
+                found = True
+                break
+        if not found:
+            freq.append([w, 1])
+
+    n = len(freq)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if freq[j][1] < freq[j + 1][1]:
+                freq[j], freq[j + 1] = freq[j + 1], freq[j]
+            elif freq[j][1] == freq[j + 1][1]:
+                if freq[j][0] > freq[j + 1][0]:
+                    freq[j], freq[j + 1] = freq[j + 1], freq[j]
+    result = []
+    for i in range(min(k, len(freq))):
+        result.append(freq[i][0])
+    return result
+
+
+print(top_k_words(" hello apple hello1 banana apple hello", 2))
