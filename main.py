@@ -257,3 +257,24 @@ def word_pattern_sort(text):
         result.extend(group_sorted)
     return result
 print(word_pattern_sort("mama papa window fly"))
+
+#16
+def transform_list(nums):
+    result = []
+    for x in nums:
+        if x <0:
+            continue
+        if x % 2 == 0 :
+            result.append(x*x)
+        else:
+            if x >10:
+                s=0
+                t=x
+                while t > 0:
+                    s += t %10
+                    t//=10
+                    result.append(s)
+            else:
+                result.append(x)
+    return result
+print(transform_list([-12, 3, 8, 79, -5]))
