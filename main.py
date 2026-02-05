@@ -53,3 +53,15 @@ def analyze_text(text):
 
 text = input("Введите текст:")
 print(analyze_text(text))
+
+#2
+process = lambda s: " ".join(
+    filter(lambda word: len(word) % 2==0,
+           map( lambda word: word[::-1],
+                filter(lambda word: not any( x.isdigit() for x in word),
+                        s.split()
+                )
+           )
+    )
+)
+print(process("hello anel sa33 level even"))
