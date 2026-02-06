@@ -420,3 +420,11 @@ def remove_duplicates_keep_last(nums):
             result.append(x)
     return list(reversed(result))
 print(remove_duplicates_keep_last([1,2,3,4,5]))
+
+#27
+a= lambda strings: sorted(
+    strings,
+    key=lambda s: (-len(s),s)
+)[:5]
+x=["apple","banana","cherry"]
+print(a(x))
