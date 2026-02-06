@@ -428,3 +428,13 @@ a= lambda strings: sorted(
 )[:5]
 x=["apple","banana","cherry"]
 print(a(x))
+
+#28
+def moving_average(nums,k):
+    result = []
+    for i in range(len(nums)-k+1):
+        window = nums[i:i+k]
+        if all(x>= 0 for x in window):
+            result.append(sum(window)/k)
+    return result
+print(moving_average([1,2,3,4,5],3))
