@@ -364,3 +364,12 @@ def group_by_parity_and_sort(nums):
     odds.sort()
     return evens+odds
 print(group_by_parity_and_sort([1,2,3,4,5]))
+
+#23
+a= lambda n: n>1 and all(n% d != 0 for d in range(2, int(n**0.5) + 1))
+s= lambda nums:[
+    x for i, x in enumerate(nums)
+    if a(i) and(x % 2!= 0) and (x> (sum(nums)/ len(nums)))
+]
+nums=[10,3,7,8,9,11,2,1]
+print(s(nums))
