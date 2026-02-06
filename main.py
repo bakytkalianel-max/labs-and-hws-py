@@ -350,3 +350,17 @@ a= lambda strings: list(
 )
 x=["hello", "world","adsf"]
 print(a(x))
+
+#22
+def group_by_parity_and_sort(nums):
+    evens=[]
+    odds=[]
+    for x in nums:
+        if x % 2 ==0:
+            evens.append(x)
+        else:
+            odds.append(x)
+    evens.sort()
+    odds.sort()
+    return evens+odds
+print(group_by_parity_and_sort([1,2,3,4,5]))
