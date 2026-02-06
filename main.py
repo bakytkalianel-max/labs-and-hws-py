@@ -447,3 +447,21 @@ s= lambda a,b: [
 a=[1,5,10,3,8,6]
 b=[3,6,9]
 print(s(a,b))
+
+#30
+def analyze_strings_list(words):
+    result = []
+    seen = set()
+    for word in words:
+        if any(ch.isdigit() for ch in word):
+            continue
+        if len(word) % 2 == 0:
+            processed = word[::-1]
+        else:
+            processed = word.upper()
+        if processed not in seen:
+            seen.add(processed)
+            result.append(processed)
+    return result
+a=["apple","bavava","cat","dog"]
+print(analyze_strings_list(a))
