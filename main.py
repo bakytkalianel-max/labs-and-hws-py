@@ -397,3 +397,15 @@ def longest_increasing_sublist(nums):
         best_start = cur_start
     return nums[best_start:best_start+best_len]
 print(longest_increasing_sublist([1,2,3,4,5]))
+
+#25
+a= lambda lists: [
+    sum(lst) / len(lst)
+    for lst in lists
+    if len(lst) >= 3 and sum(lst) % 2 ==0
+]
+x=[
+    [1,2,3],
+    [4,5]
+]
+print(a(x))
