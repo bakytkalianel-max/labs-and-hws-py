@@ -337,3 +337,16 @@ def max_subarray_sum(nums, k):
 
     return best
 print(max_subarray_sum([1,2,3,4,5],3))
+
+#21
+a= lambda strings: list(
+    map(
+        str.upper,
+        filter(
+            lambda s: s.isalpha() and len(s) >4 and len(set(s)) == len(s),
+            strings
+        )
+    )
+)
+x=["hello", "world","adsf"]
+print(a(x))
