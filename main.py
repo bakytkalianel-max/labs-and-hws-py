@@ -409,3 +409,14 @@ x=[
     [4,5]
 ]
 print(a(x))
+
+#26
+def remove_duplicates_keep_last(nums):
+    seen =set()
+    result = []
+    for x in reversed(nums):
+        if x not in seen:
+            seen.add(x)
+            result.append(x)
+    return list(reversed(result))
+print(remove_duplicates_keep_last([1,2,3,4,5]))
