@@ -438,3 +438,12 @@ def moving_average(nums,k):
             result.append(sum(window)/k)
     return result
 print(moving_average([1,2,3,4,5],3))
+
+#29
+s= lambda a,b: [
+    x for x in a
+    if x not in b and x > (sum(a)/len(a))
+]
+a=[1,5,10,3,8,6]
+b=[3,6,9]
+print(s(a,b))
